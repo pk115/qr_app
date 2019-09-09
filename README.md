@@ -23,4 +23,11 @@ samples, guidance on mobile development, and a full API reference.
   -qr_flutter: ^3.0.1 // Create QR --https://pub.dev/packages/qr_flutter
   - barcode_flutter: //Create Barcode --https://pub.dev/packages/barcode_flutter
 
+Edit \android\build.gradle
+buildscript {
+    ext.kotlin_version = '1.3.0'
+    }
 
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.3.2'
+        }
