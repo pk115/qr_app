@@ -16,17 +16,17 @@ For help getting started with Flutter, view our
 samples, guidance on mobile development, and a full API reference.
 # qr_app
 
-#Setting App
+# Setting App
 
-#add pubspec.yaml
+# add pubspec.yaml
   - barcode_scan: ^1.0.0 //for Barcode & QR Scan --https://pub.dev/packages/barcode_scan#-installing-tab-
 
-  -qr_flutter: ^3.0.1 // Create QR --https://pub.dev/packages/qr_flutter
+  - qr_flutter: ^3.0.1 // Create QR --https://pub.dev/packages/qr_flutter
 
   - barcode_flutter: //Create Barcode --https://pub.dev/packages/barcode_flutter
 
 
-Edit \android\build.gradle
+# Edit \android\build.gradle
 
 buildscript {
     ext.kotlin_version = '1.3.0'
