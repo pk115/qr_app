@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Genqr_page.dart';
 import 'barcode_page.dart';
+import 'package:screen/screen.dart';
+import 'package:lamp/lamp.dart';
 
 void main() => runApp(MyApp());
 
@@ -52,11 +54,54 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   String result = "Hey there !";
 
+  Future OpenFlash() async{
+    // Turn the lamp on:
+    Lamp.turnOn();
+
+// Turn the lamp off:
+    Lamp.turnOff();
+
+// Turn the lamp with a specific intensity (only affects iOS as of now):
+    Lamp.turnOn(intensity: 0.4);
+
+// Check if the device has a lamp:
+    bool hasLamp = await Lamp.hasLamp;
+
+  }
+
+
   Future _scanQR() async {
     try {
-      String qrResult = await BarcodeScanner.scan();
+
+      // Get the current brightness:
+      double brightness = await Screen.brightness;
+
+      // Set the brightness:
+      Screen.setBrightness(0.5);
+
+    // Check if the screen is kept on:
+      bool isKeptOn = await Screen.isKeptOn;
+
+// Prevent screen from going into sleep mode:
+      Screen.keepOn(true);
+      // Turn the lamp on:
+      Lamp.turnOn();
+
+
+
+// Turn the lamp with a specific intensity (only affects iOS as of now):
+      Lamp.turnOn(intensity: 0.4);
+
+// Check if the device has a lamp:
+      bool hasLamp = await Lamp.hasLamp;
+
+        String qrResult = await BarcodeScanner.scan();
       setState(() {
         result = qrResult;
+
+        // Turn the lamp off:
+        Lamp.turnOff();
+
       });
     } on PlatformException catch (ex) {
       if (ex.code == BarcodeScanner.CameraAccessDenied) {

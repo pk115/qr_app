@@ -70,7 +70,7 @@ packages:
       name: crypto
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.2"
+    version: "2.1.3"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -95,6 +95,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.4"
+  lamp:
+    dependency: "direct main"
+    description:
+      name: lamp
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.6"
   matcher:
     dependency: transitive
     description:
@@ -151,6 +158,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.5"
+  screen:
+    dependency: "direct main"
+    description:
+      name: screen
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.0.5"
   sky_engine:
     dependency: transitive
     description: flutter
